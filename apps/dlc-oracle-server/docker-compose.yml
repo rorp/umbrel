@@ -7,4 +7,3 @@ services:
     stop_grace_period: 1m
     ports:
       - 9998:9998
-    environment:
