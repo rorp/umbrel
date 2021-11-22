@@ -211,6 +211,10 @@ APP_LNMARKETS_IP="10.21.21.58"
 APP_LNMARKETS_PORT="4242"
 APP_ELECTRUMX_IP="10.21.21.59"
 APP_ELECTRUMX_PORT="55001"
+APP_DLC_WALLET_IP="10.21.21.100"
+APP_DLC_WALLET_SERVER_IP="10.21.21.101"
+APP_DLC_WALLET_PORT="3020"
+APP_DLC_WALLET_P2P_PORT="2862"
 
 # Generate RPC credentials
 if [[ -z ${BITCOIN_RPC_USER+x} ]] || [[ -z ${BITCOIN_RPC_PASS+x} ]] || [[ -z ${BITCOIN_RPC_AUTH+x} ]]; then
@@ -419,6 +423,10 @@ for template in "${NGINX_CONF_FILE}" "${BITCOIN_CONF_FILE}" "${LND_CONF_FILE}" "
   sed -i "s/<app-lnmarkets-port>/${APP_LNMARKETS_PORT}/g" "${template}"
   sed -i "s/<app-electrumx-ip>/${APP_ELECTRUMX_IP}/g" "${template}"
   sed -i "s/<app-electrumx-port>/${APP_ELECTRUMX_PORT}/g" "${template}"
+  sed -i "s/<app-dlc-wallet-ip>/${APP_DLC_WALLET_IP}/g" "${template}"
+  sed -i "s/<app-dlc-wallet-server-ip>/${APP_DLC_WALLET_SERVER_IP}/g" "${template}"
+  sed -i "s/<app-dlc-wallet-port>/${APP_DLC_WALLET_PORT}/g" "${template}"
+  sed -i "s/<app-dlc-wallet-p2p-port>/${APP_DLC_WALLET_P2P_PORT}/g" "${template}"
 done
 
 ##########################################################
