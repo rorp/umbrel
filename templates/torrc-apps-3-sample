@@ -37,12 +37,18 @@ HiddenServicePort 80 <app-lnmarkets-ip>:<app-lnmarkets-port>
 HiddenServiceDir /var/lib/tor/app-electrumx
 HiddenServicePort 50001 <app-electrumx-ip>:50001
 
-# dlc-wallet Hidden Service
-HiddenServiceDir /var/lib/tor/app-dlc-wallet
-HiddenServicePort 80 <app-dlc-wallet-ip>:<app-dlc-wallet-port>
+# tallycoin-connectHidden Service
+HiddenServiceDir /var/lib/tor/app-tallycoin-connect
+HiddenServicePort 80 <app-tallycoin-connect-ip>:<app-tallycoin-connect-port>
 
+# syncthing Hidden Service
+HiddenServiceDir /var/lib/tor/app-syncthing
+HiddenServicePort 80 <app-syncthing-ip>:<app-syncthing-port>
 
-# dlc-wallet p2p Hidden Service
-HiddenServiceDir /var/lib/tor/app-dlc-wallet-p2p
-HiddenServicePort <app-dlc-wallet-p2p-port> <app-dlc-wallet-server-ip>:<app-dlc-wallet-p2p-port>
+# suredbits-wallet Hidden Service
+HiddenServiceDir /var/lib/tor/app-suredbits-wallet
+HiddenServicePort 80 <app-suredbits-wallet-ip>:<app-suredbits-wallet-port>
 
+# suredbits-wallet p2p Hidden Service
+HiddenServiceDir /var/lib/tor/app-suredbits-wallet-p2p
+HiddenServicePort <app-suredbits-wallet-p2p-port> <app-suredbits-wallet-server-ip>:<app-suredbits-wallet-p2p-port>

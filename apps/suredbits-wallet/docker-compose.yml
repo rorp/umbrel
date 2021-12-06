@@ -7,13 +7,13 @@ services:
     restart: on-failure
     stop_grace_period: 1m
     environment:
-      WALLET_SERVER_API_URL: "http://${APP_DLC_WALLET_SERVER_IP}:9999/"
+      WALLET_SERVER_API_URL: "http://${APP_SUREDBITS_WALLET_SERVER_IP}:9999/"
       TOR_PROXY: socks5://${TOR_PROXY_IP}:${TOR_PROXY_PORT}
     ports:
-      - "${APP_DLC_WALLET_PORT}:3002"
+      - "${APP_SUREDBITS_WALLET_PORT}:3002"
     networks:
       default:
-        ipv4_address: $APP_DLC_WALLET_IP
+        ipv4_address: $APP_SUREDBITS_WALLET_IP
     depends_on: 
       - walletserver
   walletserver:
@@ -30,11 +30,11 @@ services:
       BITCOIN_S_TOR_PROVIDED: "true"
       BITCOIN_S_DLCNODE_PROXY_ENABLED: "true"
       BITCOIN_S_DLCNODE_PROXY_SOCKS5: "${TOR_PROXY_IP}:${TOR_PROXY_PORT}"
-      BITCOIN_S_DLCNODE_EXTERNAL_IP: $DLC_WALLET_P2P_HIDDEN_SERVICE
+      BITCOIN_S_DLCNODE_EXTERNAL_IP: $SUREDBITS_WALLET_P2P_HIDDEN_SERVICE
       BITCOIN_S_BITCOIND_HOST: $BITCOIN_IP
       BITCOIN_S_BITCOIND_PORT: $BITCOIN_RPC_PORT
       BITCOIN_S_BITCOIND_USER: $BITCOIN_RPC_USER
       BITCOIN_S_BITCOIND_PASSWORD: $BITCOIN_RPC_PASS
     networks:
       default:
-        ipv4_address: $APP_DLC_WALLET_SERVER_IP
+        ipv4_address: $APP_SUREDBITS_WALLET_SERVER_IP
